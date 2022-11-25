@@ -1,0 +1,34 @@
+{
+  "name": "postcss-absolute-root-url",
+  "version": "0.1.0",
+  "description": "Replaces relative images URL paths in SCSS with absolute URL from ROOT_URL environment variable.",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "publish": "npm publish --auth-type=legacy --otp=$(npm-automated-login-totp --generate-otp --no-color) --access public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softwarecreations/postcss-absolute-root-url.git"
+  },
+  "keywords": [
+    "postcss",
+    "meteor",
+    "scss",
+    "css",
+    "url",
+    "absolute",
+    "relative",
+    "rebase"
+  ],
+  "author": "softwarecreations",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/softwarecreations/postcss-absolute-root-url/issues"
+  },
+  "homepage": "https://github.com/softwarecreations/postcss-absolute-root-url#readme"
+}
