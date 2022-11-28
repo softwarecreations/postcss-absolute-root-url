@@ -1,42 +1,44 @@
 # postcss-absolute-root-url
 
 ## What is postcss-absolute-root-url
-This is an unofficial plugin for [postcss](https://www.npmjs.com/package/postcss) that transforms `url`'s for images and fonts into absolute URL's.
+This is an unofficial plugin for [postcss](https://www.npmjs.com/package/postcss) that transforms relative `url`'s for images and fonts into absolute URL's.
 
-The ROOT_URL environment variable is used so that you don't need to hard-code a root url into the .scss ... because the root url depends upon which developer's computer (or server) the .scss is being compiled on/for.
+The `ROOT_URL` environment variable is used so that you don't need to hard-code a root url into the .scss ... because the root url needed depends upon which developer's computer (for dev/test locally) or server that the .scss is being compiled on/for.
 
-## Where it can be used
-It could probably be used in any Node.JS project, or with Webpack or Gulp, etc.
+## Compatible frameworks
+It could **probably** be used in
+* Any Node.JS project
+* Webpack
+* Gulp
+* ... etc
 
-But thus far it has only been tested with [https://www.meteor.com/](MeteorJS Fullstack framework).
+But thus far **it has only been tested with a ReactJS project with [MeteorJS Fullstack framework](https://www.meteor.com/).**
 
-[postcss](https://www.npmjs.com/package/postcss) and is included into a Meteor project by adding [standard-minifier-css](https://docs.meteor.com/packages/standard-minifier-css.html) to the Meteor project. So if it's not already in .meteor/packages, run `meteor add standard-minifier-css`
+## Usage in Meteor
+Meteor package [standard-minifier-css](https://docs.meteor.com/packages/standard-minifier-css.html) runs [postcss](https://www.npmjs.com/package/postcss). If `standard-minifier-css` is not already listed in .meteor/packages, run `meteor add standard-minifier-css`.
 
 ## What postcss-absolute-root-url does
-Replaces relative images and fonts URL paths in SCSS with an absolute URL from ROOT_URL environment variable.
+It replaces relative images and fonts URL paths in SCSS with an absolute URL from ROOT_URL environment variable. Example where `ROOT_URL` environment variable is `https://example.com`
 
 before:
 ```
 .foo { background-image: url(images/foo.jpg); }
 .bar { background-image: url(images/icons/bar.svg); }
 ```
-Assuming `ROOT_URL` environment variable is `https://example.com`
 after:
 ```
 .foo { background-image: url(https://example.com/images/foo.jpg); }
 .bar { background-image: url(https://example.com/images/icons/bar.svg); }
 ```
 
-etc
-
 ## Installation
 ```
 npm i --save-dev autoprefixer postcss postcss-easy-import postcss-load-config postcss-absolute-root-url
 ```
 
-Add a `postcss` object to the root of your `package.json` file as a sibling to `dependencies`, `license`, `author`, etc object properties.
+Add a `postcss` object to the root of your `package.json` configuration file as a sibling to `dependencies`, `license`, `author`, etc object properties, as below.
 
-Enable it for whatever CSS properties that you want. In the example below, it's only enabled for `background-image`.
+Enable it for whatever CSS properties that you want. (in the example below, `postcss-absolute-root-url` is only enabled for `background-image`)
 ```
 "postcss": {
   "plugins": {
@@ -47,8 +49,9 @@ Enable it for whatever CSS properties that you want. In the example below, it's 
 },
 ```
 
-### Docs
-I've only tested with `background-image`. Further reading:
+As per [standard-minifier-css](https://docs.meteor.com/packages/standard-minifier-css.html) docs, the order of the plugins is important, they say `postcss-easy-import` must be first and `autoprefixer` must be last. So probably `postcss-absolute-root-url` should be 2nd last, but you can try whatever.
+
+### Relevant CSS docs:
 [MDN CSS url](https://developer.mozilla.org/en-US/docs/Web/CSS/url)
 
 ### Say thanks
