@@ -43,11 +43,16 @@ Enable it for whatever CSS properties that you want. (in the example below, `pos
 "postcss": {
   "plugins": {
     "postcss-easy-import": {},
-    "postcss-absolute-root-url": { "background-image":1, "list-style-image":0, "content":0, "cursor":0, "border-image-source":0, "src":0 },
+    "postcss-absolute-root-url": { "verbose":1, "background-image":1, "list-style-image":0, "content":0, "cursor":0, "border-image-source":0, "src":0 },
     "autoprefixer": {}
   }
 },
 ```
+
+#### verbose values
+0. Silent
+1. See what it's replacing
+2. Also see what it's not replacing
 
 As per [standard-minifier-css](https://docs.meteor.com/packages/standard-minifier-css.html) docs, the order of the plugins is important, they say `postcss-easy-import` must be first and `autoprefixer` must be last. So probably `postcss-absolute-root-url` should be 2nd last, but you can try whatever.
 

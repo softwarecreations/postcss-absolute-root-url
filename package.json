@@ -1,6 +1,6 @@
 {
   "name": "postcss-absolute-root-url",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Replaces relative images URL paths in SCSS with absolute URL from ROOT_URL environment variable.",
   "main": "index.js",
   "dependencies": {
