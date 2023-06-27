@@ -1,3 +1,9 @@
+[![NPM downloads](http://img.shields.io/npm/dt/postcss-absolute-root-url.svg)](https://npmjs.org/package/postcss-absolute-root-url)
+[![Version](https://img.shields.io/npm/v/postcss-absolute-root-url.svg)](https://www.npmjs.com/package/postcss-absolute-root-url)
+[![Dependencies](https://img.shields.io/librariesio/release/npm/postcss-absolute-root-url)](https://libraries.io/npm/postcss-absolute-root-url)
+[![License](https://img.shields.io/npm/l/postcss-absolute-root-url)](https://npmjs.org/package/postcss-absolute-root-url)
+![Code size](https://img.shields.io/github/languages/code-size/softwarecreations/postcss-absolute-root-url.svg)
+
 # postcss-absolute-root-url
 
 ## What is postcss-absolute-root-url
